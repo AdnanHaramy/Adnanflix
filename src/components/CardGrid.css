@@ -1,0 +1,55 @@
+@media (min-width: 650px) {
+  .parentOfParents {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px;
+    justify-content: space-evenly;
+  }
+  .parentCardPicture {
+  }
+}
+@media (max-width: 649px) {
+  .parentCardPicture {
+    width: 30vw !important;
+  }
+}
+.parentCardPicture {
+  width: 22vw;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.childCardPicture {
+  height: 85%;
+  margin-bottom: 0px;
+}
+.childCardPictureImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-bottom: 0px;
+}
+h1 {
+  margin-top: -5px;
+  text-align: center;
+  margin-bottom: 2px;
+  font-size: 3vw;
+}
+.OrderNow {
+  border-radius: 2px;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  font-size: 2.2vw;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 5px;
+}
+@media (min-width: 700px) {
+  .OrderNow {
+    font-size: 1.6vw !important;
+  }
+}
+.parent1 {
+  text-align: center;
+}
