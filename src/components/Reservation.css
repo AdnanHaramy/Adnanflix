@@ -1,0 +1,52 @@
+h3 {
+  font-size: 5vw;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+h2 {
+  font-size: 4vw;
+  text-align: center;
+  margin-top: 0px;
+}
+@media (min-width: 700px) {
+  h3 {
+    font-size: 3.2vw !important;
+  }
+  h2 {
+    font-size: 2.7vw !important;
+  }
+}
+.formContainer {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2px;
+  column-gap: 5px;
+}
+.formHolder {
+  font-size: 3vw;
+}
+@media (min-width: 1000px) {
+  .formHolder {
+    font-size: 2vw;
+  }
+}
+.form {
+  width: 35vw;
+  height: 4vh;
+  margin-bottom: 8px;
+}
+input {
+  width: 97%;
+  height: 97%;
+  padding: 2.5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+@media (min-width: 800px) {
+  .form {
+    width: 30vw;
+  }
+}
