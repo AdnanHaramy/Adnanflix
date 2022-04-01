@@ -1,0 +1,5 @@
+.movie-list{
+    display: grid;
+    gap: 0px;
+    grid-template-columns: repeat(12,250px) ;
+}
