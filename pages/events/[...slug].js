@@ -1,21 +1,38 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import useSWR from 'swr'
 import { getFilteredEvents } from '../../helpers/api-util';
 import EventList from '../../components/events/event-list';
 import ResultsTitle from '../../components/events/results-title';
 import Button from '../../components/ui/button';
 import ErrorAlert from '../../components/ui/error-alert';
+import { data } from 'browserslist';
 // accepting the props we get from the server side function
 function FilteredEventsPage(props) {
-  // const router = useRouter();
-  // const filterData = router.query.slug;
-  // if (!filterData) {
-  //   return <p className='center'>Loading...</p>;
-  // }
-  // const filteredYear = filterData[0];
-  // const filteredMonth = filterData[1];
-  // const numYear = +filteredYear;
-  // const numMonth = +filteredMonth;
+  const router = useRouter();
+  const filterData = router.query.slug;
+  const { data, error } = useSWR('https://nextjs-1798b-default-rtdb.firebaseio.com/events.json'); (
+    useEffect(() => {
+      if (data) {
+        const events = [];
+        for (const key in data) {
+          events.push(
+            {
+              id: key,
+              ...data[key],
+            }
+          );
+        }
+        return events;
+      }
+    }, [data]));
+  if (!filterData) {
+    return <p className='center'>Loading...</p>;
+  }
+  const filteredYear = filterData[0];
+  const filteredMonth = filterData[1];
+  const numYear = +filteredYear;
+  const numMonth = +filteredMonth;
 
   // if the validation inside the server side function is true then we return this component 
   if (props.hasError === true) {
